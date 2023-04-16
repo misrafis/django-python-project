@@ -5,11 +5,11 @@ from django.contrib.auth.models import User
 # Model (wygląd tabeli w bazie danych) zadania
 class Task(models.Model):
     # Pole użytkownik jako klucz obcy po użytkowniku z tabeli User, która standardowo w django odpowiada za użytkowników
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     # Tytuł zadania jako pole znaków o długości znaków 200
     title = models.CharField(max_length=200)
     # Opis zadania jako pole tekstowe
-    description = models.TextField(null=True, blank=True)
+    description = models.TextField()
     # Czy zadanie zostało wykonane jako Boolean
     complete = models.BooleanField(default=False)
     # Data utworzenia zadania
